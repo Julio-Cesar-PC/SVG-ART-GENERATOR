@@ -53,8 +53,37 @@ svg {
     height: 500px;
     background: #eee;
     display: block;
+    /* animation: draw 2s ease-in-out infinite; */
 }
 
-.telabranca {
-    fill: white;
+@keyframes rectFade{
+    from {
+    width: 1%;
+    }
+    to {
+    width:100%;
+    opacity: 1;
+    }
+}
+
+rect.rectBackground{
+    opacity: 1;
+    animation: rectFade 5s linear forwards;
+}
+
+@keyframes lineFade{
+    from {
+    }
+    to {
+    opacity: 1;
+    }
+}
+
+.line {
+    opacity: 0;
+}
+
+line.lineBackground{
+    opacity: 0;
+    animation: lineFade 2s linear forwards;
 }

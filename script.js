@@ -3,7 +3,7 @@ let botao2 = document.getElementById('btn2');
 let coisa = document.querySelector('.coisa');
 let SVGCONTENT = document.querySelector('.svg');
 
-SVGCONTENT.style.transition = 'all 1s'
+// SVGCONTENT.style.transition = 'all 1s'
 
 PALLETAMONDRIAN = ['#f7352f', '#017bfc', '#fad000', 'black', 'white']
 PALLETAMAZE = ['#8C0E03', '#0487D9', "#2493BF", '#033B3D', '#F21905', 'black', '#0D4A3A', '#2D5731', '#2D5731', '#526126']
@@ -30,6 +30,7 @@ function draw_mondrian(width, height, step) {
             }
             const rect = document.createElementNS("http://www.w3.org/2000/svg",
             "rect",);
+            rect.setAttribute("class", "rectBackground")
             rect.setAttribute("x", x);
             rect.setAttribute("y", y);
             rect.setAttribute("width", w);
@@ -62,6 +63,7 @@ function draw_maze(num, height) {
             const line = document.createElementNS("http://www.w3.org/2000/svg",
             "line",)
             if(choose([0, 1]) == 0) {
+                line.setAttribute("class", "lineBackground")
                 line.setAttribute("x1", col)
                 line.setAttribute("y1", row)
                 line.setAttribute("x2", col+step)
@@ -69,6 +71,7 @@ function draw_maze(num, height) {
                 line.setAttribute("stroke", color)
                 line.setAttribute("stroke-width", 5)
             } else {
+                line.setAttribute("class", "lineBackground")
                 line.setAttribute("x1", col+step)
                 line.setAttribute("y1", row)
                 line.setAttribute("x2", col)
